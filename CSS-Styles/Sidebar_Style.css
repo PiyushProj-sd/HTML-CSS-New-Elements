@@ -1,0 +1,155 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+html{
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.5em;
+}
+
+body{
+  background-color: rgb(0, 0, 20);
+  color: white;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: grid;
+  grid-template-columns: auto 1fr;
+}
+
+main{
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: clamp(0.7rem, 5vw, 3rem);
+}
+
+.container{
+  border: 1px solid grey;
+  border-radius: 1rem;
+  padding: clamp(1rem, 4vw, 3rem);
+  
+  p{
+    margin-top: 1rem;
+  }
+}
+main p{
+  color: rgb(215, 215, 215);
+}
+
+#sidebar{
+  box-sizing: border-box;
+  height: 100vh;
+  width: 250px;
+  padding: 5px 1rem;
+  border-right: 1px solid grey;
+  position: sticky;
+  top: 0;
+  align-self: start;
+  overflow-y: auto;
+}
+
+#sidebar::-webkit-scrollbar{
+  width: 12px;
+}
+
+#sidebar::-webkit-scrollbar-track{
+  background: none;
+}
+
+#sidebar ul{
+  list-style: none;
+}
+
+#sidebar > ul > li:first-child{
+  font-size: 1.1rem;
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 1em;
+  font-weight: 600;
+}
+
+#sidebar ul li.active a{
+  color: rgb(124, 124, 255);
+
+  svg{
+    fill: rgb(124, 124, 255);
+  }
+}
+
+#sidebar a, #sidebar .dropdown, #sidebar .logo{
+  border-radius: .5em;
+  padding: .85em;
+  text-decoration: none;
+  color: rgb(215, 215, 215);
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+
+.dropdown{
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  color: rgb(215, 215, 215);
+  font: inherit;
+  cursor: pointer;
+}
+
+#sidebar svg{
+  flex-shrink: 0;
+  fill: rgb(215, 215, 215);
+}
+
+#sidebar a span, #sidebar .dropdown span{
+  flex-grow: 1;
+}
+
+
+#sidebar a:hover, #sidebar .dropdown:hover{
+  background-color: #222533;
+}
+
+#sidebar .sub-menu{
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: 300ms ease-in-out;
+
+  > div{
+    overflow: hidden;
+  }
+}
+
+#sidebar .sub-menu.show{
+  grid-template-rows: 1fr;
+}
+
+.dropdown svg{
+  transition: 200ms ease;
+}
+
+.rotate svg:last-child{
+  rotate: 180deg;
+}
+
+.sub-menu li{
+  padding-left: 1em;
+}
+
+#toggle-btn{
+  background: none;
+  border: none;
+  padding: 1em;
+  border-radius: .5em;
+  cursor: pointer;
+  margin-left: auto;
+  
+  svg{
+    transition: 200ms ease;
+  }
+}
+
+#toggle-btn:hover{
+  background-color: #222533;
+}
