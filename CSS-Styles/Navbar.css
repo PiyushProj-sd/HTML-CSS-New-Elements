@@ -1,0 +1,131 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+html{
+  font-family: "Rubik", sans-serif;
+  line-height: 1.3rem;
+}
+
+body{
+  background-color: rgb(0, 0, 10);
+  min-height: 100dvh;
+  color: white;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+  "navbar navbar"
+  "sidebar main"
+  "footer footer";
+}
+
+nav{
+  grid-area: navbar;
+  border-bottom: 1px solid grey;
+  padding: 0.5em 1em;
+  border-radius: 10em;
+  background: white;
+  display: flex;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  left: 1em;
+  right: 1em;
+  color: rgb(0, 0, 10);
+  svg path{
+    fill: white;
+  }
+}
+
+.leftside span{
+  background-color: rgb(0, 0, 10);
+  border-radius: 40px;
+  cursor: pointer;
+  transition: 250ms ease;
+}
+
+.leftside p{
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.leftside{
+  display: flex;
+  align-items: center;
+  gap: 0.4em;
+  font-size: 2em;
+}
+
+.middle{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.middle ul{
+  display: flex;
+  list-style: none;
+  gap: .7em;
+}
+
+.middle ul li{
+  text-decoration: none;
+  padding: 0.5em 1.5em; 
+  border-radius: 2em;
+  cursor: pointer;
+  transition: 250ms ease-in-out;
+}
+
+.middle ul li:hover{
+  background-color: rgb(0, 0, 0);
+  color: white;
+  
+}
+
+.rightside{
+  display: flex;
+  font-size: 1.4em;
+  font-weight: 500;
+  align-items: center;
+  color: white;
+  cursor: pointer;
+}
+
+.bg{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+  background-color: rgb(0, 0, 10);
+  padding: .5em .5em;
+  border-radius: 3em;
+  transition: 250ms ease;
+}
+
+.bg:hover{
+  background-color: white;
+  color: rgb(0, 0, 10);
+
+  svg path{
+    fill: rgb(0, 0, 10);
+  }
+
+}
+
+aside{
+  grid-area: sidebar;
+}
+
+main{
+  grid-area: main;
+}
+
+footer{
+  grid-area: footer;
+}
+
+
+
+
