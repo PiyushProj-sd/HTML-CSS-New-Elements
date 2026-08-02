@@ -1,7 +1,7 @@
 :root{
   --bg-clr: whitesmoke;
   --nav-clr: #1a1a24;
-  --hover-clr: #00b4d8;
+  --hover-clr: #2200ff;
   --txt-decor: none;
   --text-clr: #ffffff;
 }
@@ -19,6 +19,7 @@ html{
 
 body{
   background-color: var(--bg-clr);
+  color: var(--text-clr);
 }
 
 nav{
@@ -30,14 +31,22 @@ nav{
   background-color: var(--nav-clr);
 }
 
-.main-div{
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  height: 100%;
+.mainlogo{
+  font-size: 2em;
+  font-weight: 500;
 }
 
-.main-div a{
+.main-div{
+  display: flex;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  transition: 100ms ease-in-out;
+}
+
+
+
+nav a{
   text-decoration: none;
   color: var(--text-clr);
   height: 100%;
@@ -48,4 +57,56 @@ nav{
 
 .main-div a:hover{
   background-color: var(--hover-clr);
+}
+
+label svg{
+  fill: var(--text-clr);
+}
+
+nav .first-tag{
+  margin-right: auto;
+}
+
+#sidebar-active{
+  display: none;
+}
+
+.open-sidebar-button, .close-sidebar-button{
+  display: none;
+  padding: 0 20px;
+}
+
+@media(max-width: 600px){
+  .main-div{
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: auto;
+    padding-left: 1em;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 38vw;
+    background: var(--nav-clr);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  }
+
+  .main-div a{
+    height: 5%;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0;
+  }
+
+  .close-sidebar-button{
+    display: block;
+  }
+
+  label.close-sidebar-button{
+    padding: 18px;
+    margin-left: auto;
+  }
 }
