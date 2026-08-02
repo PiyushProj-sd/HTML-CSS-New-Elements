@@ -1,0 +1,51 @@
+:root{
+  --bg-clr: whitesmoke;
+  --nav-clr: #1a1a24;
+  --hover-clr: #00b4d8;
+  --txt-decor: none;
+  --text-clr: #ffffff;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+}
+
+html{
+  font-family: "Rubik", sans-serif;
+  line-height: .4em;
+
+}
+
+body{
+  background-color: var(--bg-clr);
+}
+
+nav{
+  padding: 0 1em;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 60px;
+  background-color: var(--nav-clr);
+}
+
+.main-div{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 100%;
+}
+
+.main-div a{
+  text-decoration: none;
+  color: var(--text-clr);
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 1em;
+}
+
+.main-div a:hover{
+  background-color: var(--hover-clr);
+}
