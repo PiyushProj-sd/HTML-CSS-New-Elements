@@ -1,0 +1,64 @@
+html{
+  font-family: "Rubik", sans-serif;
+  line-height: 1em;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  background-color: rgb(235, 229, 229);
+  color: black;
+  font-size: 1.3em;
+  min-height: 100dvh;
+}
+
+.container{
+  min-height: 100dvh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2em;
+}
+
+.container a{
+  text-decoration: none;
+  background-color: white;
+  padding: .7em;
+  border-radius: 50%;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  display: grid;        /**this will make sure it's in center**/
+  place-items: center;
+  box-shadow: 0 0 5 rgba(.5);
+  position: relative;
+  transition: 200ms ease-in-out;
+}
+
+.container a:hover{
+  background-color: var(--accent-clr);
+}
+
+.container a:hover svg{
+  fill: white;
+}
+
+.container a::before{
+  content: attr(data-source);
+  position: absolute;
+  background-color: var(--accent-clr);
+  padding: .5em 1em;
+  border-radius: 1em;
+  color: white;
+  text-decoration: none;
+  transform: translateY(-70px);
+}
+
+
+
+.container a svg{
+  height: 2em;
+  width: 2em;
+}
