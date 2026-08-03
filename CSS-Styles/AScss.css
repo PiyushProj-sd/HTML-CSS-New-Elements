@@ -53,7 +53,15 @@ body{
   border-radius: 1em;
   color: white;
   text-decoration: none;
-  transform: translateY(-70px);
+  transform: translateY(-30px) rotate(25deg);
+  opacity: 0;
+  transition: 200ms cubic-bezier(0.42, 0.06, 0.76, 1.68);
+  
+}
+
+.container a:hover::before{
+  transform: translateY(-70px) rotate(0);
+  opacity: 1;
 }
 
 
@@ -61,4 +69,22 @@ body{
 .container a svg{
   height: 2em;
   width: 2em;
+}
+
+.container a::after{
+  content: '';
+  position: absolute;
+  height: 0;
+  width: 0;
+  border-right: 8px solid transparent;
+  border-left:  8px solid transparent;
+  border-top: 10px solid var(--accent-clr);
+  transform: translateY(-5px) rotate(25deg);
+  transition: 200ms cubic-bezier(0.42, 0.06, 0.76, 1.68);
+  opacity: 0;
+}
+
+.container a:hover::after{
+  transform: translateY(-48px) rotate(0);
+  opacity: 1;
 }
